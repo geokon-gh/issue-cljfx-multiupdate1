@@ -74,7 +74,7 @@
 
 (defn root
   ""
-  [{:keys [kingdoms current-kingdom current-type]}]
+  [{:keys [kingdoms current-kingdom current-type current-subtype]}]
   {:fx/type :stage
    :showing true
    :scene {:fx/type :scene
@@ -82,7 +82,8 @@
                   :children [{:fx/type creatures
                               :kingdoms kingdoms
                               :current-kingdom current-kingdom
-                              :current-type current-type}]}}})
+                              :current-type current-type
+                              :current-subtype current-subtype}]}}})
 
 (defn render-please
   ""
