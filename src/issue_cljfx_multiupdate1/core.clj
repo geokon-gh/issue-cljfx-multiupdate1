@@ -85,13 +85,12 @@
                               :current-type current-type
                               :current-subtype current-subtype}]}}})
 
-(defn render-please
-  ""
-  []
-  (fx/mount-renderer
-   *state
-   (fx/create-renderer
-    :middleware (fx/wrap-map-desc assoc :fx/type root)
-    :opts {:fx.opt/map-event-handler event-handler})))
 
-(render-please)
+(def renderer
+  (fx/create-renderer
+   :middleware (fx/wrap-map-desc assoc :fx/type root)
+   :opts {:fx.opt/map-event-handler event-handler}))
+
+(fx/mount-renderer
+ *state
+ renderer)
